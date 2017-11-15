@@ -3,9 +3,10 @@
  */
 
 angular.element(document).injector().invoke(($injector, $rootScope) => {
+  const patchedSymbol = Symbol('patched');
+  
   $rootScope.$on('$routeChangeStart', (e, next, current) => {
     if (!next.resolve) return;
-    const patchedSymbol = Symbol('patched');
     
     Object.keys(next.resolve).forEach(key => {
       const resolver = next.resolve[key];
