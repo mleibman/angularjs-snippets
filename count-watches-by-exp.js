@@ -1,5 +1,6 @@
 // Counts active watches and prints them out grouped by expression / function.
 // Useful for analyzing the biggest contributors.
+// Best used with unminified AngularJS sources.
 
 
 function countWatchers() {
